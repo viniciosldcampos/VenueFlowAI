@@ -22,10 +22,6 @@ export default function StatusBar() {
   return (
     <div
       style={{
-        position:   "absolute",
-        bottom:     0,
-        left:       0,
-        right:      0,
         height:     38,
         background: t.surface,
         borderTop:  `1px solid ${t.border}`,

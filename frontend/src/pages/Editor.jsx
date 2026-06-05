@@ -1,3 +1,4 @@
+// src/pages/Editor.jsx
 import Toolbar         from "../components/editor/Toolbar";
 import ObjectLibrary   from "../components/editor/ObjectLibrary";
 import Canvas          from "../components/editor/Canvas";
@@ -17,24 +18,62 @@ export default function Editor() {
         display:       "flex",
         flexDirection: "column",
         height:        "100vh",
+        width:         "100vw",
         background:    t.bg,
         color:         t.text,
         fontFamily:    "'Sora', system-ui, sans-serif",
         overflow:      "hidden",
+        position:      "fixed",
+        top:           0,
+        left:          0,
       }}
     >
-      <Toolbar />
-      <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
-        <ObjectLibrary />
+      {/* TOOLBAR FIXA NO TOPO */}
+      <div style={{ flexShrink: 0, zIndex: 100 }}>
+        <Toolbar />
+      </div>
 
-        {/* canvas + statusbar + minimapa agrupados */}
-        <div style={{ flex: 1, position: "relative", display: "flex", flexDirection: "column" }}>
-          <Canvas />
-          <StatusBar />
-          <Minimap />
+      {/* ÁREA PRINCIPAL */}
+      <div
+        style={{
+          display:  "flex",
+          flex:     1,
+          overflow: "hidden",
+          minHeight: 0,
+        }}
+      >
+        {/* SIDEBAR ESQUERDA */}
+        <div style={{ flexShrink: 0, zIndex: 50, display: "flex" }}>
+          <ObjectLibrary />
         </div>
 
-        <PropertiesPanel />
+        {/* CANVAS + STATUSBAR + MINIMAP */}
+        <div
+          style={{
+            flex:     1,
+            position: "relative",
+            display:  "flex",
+            flexDirection: "column",
+            overflow: "hidden",
+            minWidth: 0,
+          }}
+        >
+          {/* canvas ocupa todo o espaço menos a statusbar */}
+          <div style={{ flex: 1, position: "relative", overflow: "hidden" }}>
+            <Canvas />
+            <Minimap />
+          </div>
+
+          {/* statusbar fica fixa na base */}
+          <div style={{ flexShrink: 0 }}>
+            <StatusBar />
+          </div>
+        </div>
+
+        {/* SIDEBAR DIREITA */}
+        <div style={{ flexShrink: 0, zIndex: 50 }}>
+          <PropertiesPanel />
+        </div>
       </div>
     </div>
   );
