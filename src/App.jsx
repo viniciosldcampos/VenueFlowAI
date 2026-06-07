@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import Rooms     from "./pages/Rooms";
 import Editor    from "./pages/Editor";
 import Events from "./pages/Events";
+import Reservations from "./pages/Reservations";
 
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/rooms"          element={<Rooms />}     />
         <Route path="/events"         element={<Events />} />
         <Route path="/rooms/:id/edit" element={<Editor />}    />
+        <Route path="/reservations"   element={<Reservations />} />
       </Routes>
     </BrowserRouter>
   );
