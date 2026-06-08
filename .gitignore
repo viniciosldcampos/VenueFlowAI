@@ -41,3 +41,8 @@ Thumbs.db
 
 # Cobertura de testes
 coverage/
+
+eslint.config.js
+package-lock.json
+package.json
+vite.config.js
