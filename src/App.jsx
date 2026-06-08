@@ -6,8 +6,7 @@ import Events    from "./pages/Events";
 import Reservations from "./pages/Reservations";
 import CalendarPage from "./pages/Calendar";
 import Clients from "./pages/Clients";
-
-
+import Financial from "./pages/Financial";
 
 export default function App() {
   return (
@@ -21,6 +20,7 @@ export default function App() {
         <Route path="/reservations"   element={<Reservations />} />
         <Route path="/calendar"       element={<CalendarPage />} />
         <Route path="/clients"        element={<Clients />} />
+        <Route path="/financial"      element={<Financial />} />
       </Routes>
     </BrowserRouter>
   );
