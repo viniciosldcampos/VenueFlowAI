@@ -1,3 +1,4 @@
+// src/pages/Events.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AreaChart, Area, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
@@ -587,7 +588,8 @@ function EventsByType({ theme:t }) {
         <div style={{ width:100, height:100, flexShrink:0 }}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
-<Pie data={PIE_DATA} cx="50%" cy="50%" innerRadius={30} outerRadius={44} dataKey="value" strokeWidth={0}>                {PIE_DATA.map((e,i) => <Cell key={i} fill={e.color} />)}
+              <Pie data={PIE_DATA} cx="50%" cy="50%" innerRadius={30} outerRadius={44} dataKey="value" strokeWidth={0}>
+                {PIE_DATA.map((e,i) => <Cell key={i} fill={e.color} />)}
               </Pie>
             </PieChart>
           </ResponsiveContainer>
