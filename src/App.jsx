@@ -10,6 +10,7 @@ import Financial from "./pages/Financial";
 import Reports from "./pages/Reports";
 import Waitlist from "./pages/Waitlist";
 import Checkin from "./pages/Checkin";
+import Settings from "./pages/Settings";
 
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/reports"        element={<Reports />} />
         <Route path="/waitlist"       element={<Waitlist />} />
         <Route path="/checkin"        element={<Checkin />} />
+        <Route path="/settings"       element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );
