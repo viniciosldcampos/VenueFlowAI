@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import Rooms     from "./pages/Rooms";
 import Editor    from "./pages/Editor";
-
 
 export default function App() {
   return (
@@ -9,6 +9,7 @@ export default function App() {
       <Routes>
         <Route path="/"               element={<Dashboard />} />
         <Route path="/dashboard"      element={<Dashboard />} />
+        <Route path="/rooms"          element={<Rooms />}     />
         <Route path="/rooms/:id/edit" element={<Editor />}    />
       </Routes>
     </BrowserRouter>
