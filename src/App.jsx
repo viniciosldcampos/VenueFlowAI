@@ -9,6 +9,7 @@ import Clients from "./pages/Clients";
 import Financial from "./pages/Financial";
 import Reports from "./pages/Reports";
 import Waitlist from "./pages/Waitlist";
+import Checkin from "./pages/Checkin";
 
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/financial"      element={<Financial />} />
         <Route path="/reports"        element={<Reports />} />
         <Route path="/waitlist"       element={<Waitlist />} />
+        <Route path="/checkin"        element={<Checkin />} />
       </Routes>
     </BrowserRouter>
   );
