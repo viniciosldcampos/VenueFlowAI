@@ -1,2 +1,24 @@
+# Dependências
+node_modules/
+**/node_modules/
 
-/src/generated/prisma
+# Build
+dist/
+build/
+
+# Variáveis de ambiente
+.env
+.env.local
+**/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Prisma
+**/src/generated/
