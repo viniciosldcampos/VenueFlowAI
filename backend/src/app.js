@@ -1,6 +1,6 @@
-const express            = require("express");
-const cors               = require("cors");
-const helmet             = require("helmet");
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
 require("dotenv").config();
 
 const authRoutes        = require("./routes/auth.routes");
@@ -9,6 +9,7 @@ const roomRoutes        = require("./routes/room.routes");
 const eventRoutes       = require("./routes/event.routes");
 const reservationRoutes = require("./routes/reservation.routes");
 const checkinRoutes     = require("./routes/checkin.routes");
+const waitlistRoutes    = require("./routes/waitlist.routes");
 
 const app = express();
 
@@ -29,12 +30,13 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/api/auth",         authRoutes);
-app.use("/api/users",        userRoutes);
-app.use("/api/rooms",        roomRoutes);
-app.use("/api/events",       eventRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/rooms",  roomRoutes);
+app.use("/api/events", eventRoutes);
 app.use("/api/reservations", reservationRoutes);
-app.use("/api/checkins",     checkinRoutes);
+app.use("/api/checkins", checkinRoutes);
+app.use("/api/waitlist", waitlistRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ error: "Rota não encontrada" });
