@@ -8,6 +8,7 @@ const userRoutes        = require("./routes/user.routes");
 const roomRoutes        = require("./routes/room.routes");
 const eventRoutes       = require("./routes/event.routes");
 const reservationRoutes = require("./routes/reservation.routes");
+const checkinRoutes     = require("./routes/checkin.routes");
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use("/api/users",        userRoutes);
 app.use("/api/rooms",        roomRoutes);
 app.use("/api/events",       eventRoutes);
 app.use("/api/reservations", reservationRoutes);
+app.use("/api/checkins",     checkinRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ error: "Rota não encontrada" });
