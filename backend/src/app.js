@@ -1,7 +1,9 @@
-const express = require("express");
-const cors    = require("cors");
-const helmet  = require("helmet");
+const express    = require("express");
+const cors       = require("cors");
+const helmet     = require("helmet");
 require("dotenv").config();
+
+const authRoutes = require("./routes/auth.routes");
 
 const app = express();
 
@@ -14,7 +16,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ─── ROTA DE HEALTH CHECK ─────────────────────────────────────────────────────
+// ─── ROTAS ────────────────────────────────────────────────────────────────────
 app.get("/", (req, res) => {
   res.json({
     status:  "ok",
@@ -23,6 +25,8 @@ app.get("/", (req, res) => {
     env:     process.env.NODE_ENV,
   });
 });
+
+app.use("/api/auth", authRoutes);
 
 // ─── ROTA 404 ─────────────────────────────────────────────────────────────────
 app.use((req, res) => {

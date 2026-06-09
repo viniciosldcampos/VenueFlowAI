@@ -9,7 +9,7 @@ build/
 # Variáveis de ambiente
 .env
 .env.local
-**/.env
+**/.envs
 
 # Logs
 *.log
