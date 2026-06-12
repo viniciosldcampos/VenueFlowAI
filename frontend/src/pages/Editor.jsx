@@ -1,4 +1,3 @@
-// src/pages/Editor.jsx
 import Toolbar         from "../components/editor/Toolbar";
 import ObjectLibrary   from "../components/editor/ObjectLibrary";
 import Canvas          from "../components/editor/Canvas";

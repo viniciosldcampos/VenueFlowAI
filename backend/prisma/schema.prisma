@@ -24,6 +24,7 @@ model User {
 
   reservations Reservation[]
   checkins     Checkin[]
+  waitlist     Waitlist[]
 
   @@map("users")
 }
@@ -211,6 +212,7 @@ model Checkin {
 model Waitlist {
   id         Int            @id @default(autoincrement())
   userId     Int
+  user       User           @relation(fields: [userId], references: [id])
   eventId    Int
   event      Event          @relation(fields: [eventId], references: [id])
   ticketType String
