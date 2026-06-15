@@ -14,6 +14,11 @@ export const useEditorStore = create((set, get) => ({
   selectedSeatType:    "standard", // tipo de assento para adicionar
   selectedStructureType: "stage",  // tipo de estrutura para adicionar
   selectedEventType:   "camarote", // tipo de evento para adicionar
+  objectConfig: {
+  width:    2,
+  height:   1,
+  quantity: 1,
+  }, // configurações de criação de objetos
   gridMode:    "dots",  // "dots" | "lines" | "none"
   snapEnabled: true,    // snap ao grid ativado
   darkMode:    true,    // dark mode ativado
@@ -54,6 +59,9 @@ export const useEditorStore = create((set, get) => ({
 
   setSelectedEventType: (type) =>
     set({ selectedEventType: type, activeTool: "event" }),
+
+  setObjectConfig: (changes) =>
+  set((s) => ({ objectConfig: { ...s.objectConfig, ...changes } })),
 
   // ─── AÇÕES: CANVAS ──────────
   setZoom: (zoom) =>
